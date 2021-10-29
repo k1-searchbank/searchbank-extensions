@@ -100,9 +100,9 @@ window.addEventListener('DOMContentLoaded', (event) => {
     const imageTag = `<div class="photo"><img src="${post.image}" /></div>`
     const subTag = `<span class="sub">関連記事</span>`
     const titleTag = `<p class="title">${post.title}</p>`
+    const authorTag = `<p class="author">${post.author}</p>`
     const dateText = post.publishedAt + (!!post.updatedAt ? ` (公開日: ${post.updatedAt})` : '')
     const dateTag = `<p class="date">${dateText}</p>`
-    const authorTag = `<p class="date">${post.author}</p>`
 
     node.innerHTML = `${imageTag}<div class="txt">${subTag}${titleTag}${authorTag}${dateTag}</div>`
   }
