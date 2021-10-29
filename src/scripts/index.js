@@ -61,18 +61,18 @@ window.addEventListener('DOMContentLoaded', (event) => {
         };
         xhr.send()
       }).then(function(response) {
-        const xml = new window.DOMParser().parseFromString(response, "text/xml")
-        const mainNode = document.querySelector('#Main')
+        const html = new window.DOMParser().parseFromString(response, "text/html")
+        const mainNode = html.querySelector('#Main')
 
         const threeHoursLater = getTimestamp() + (60 * 60 * 3)
         sessionStorage.setItem(key, JSON.stringify({
           id: id,
           url: url,
           title: safeInnerText(mainNode.querySelector('h1')),
-          image: document.querySelector('meta[property="og:image"]').getAttribute('content'),
+          image: html.querySelector('meta[property="og:image"]').getAttribute('content'),
           author: safeInnerText(mainNode.querySelector('.basicInfo .author')),
           publishedAt: safeInnerText(mainNode.querySelector('.basicInfo .date')),
-          updatedAt: safeInnerText(document.querySelector('#published-date')),
+          updatedAt: safeInnerText(html.querySelector('#published-date')),
           expiredTimestamp: threeHoursLater,
         }))
 
