@@ -4,6 +4,16 @@ function fmtDate(dateStr) {
 }
 
 
+// add css
+window.addEventListener('DOMContentLoaded', (event) => {
+  const cssNode = document.createElement('link')
+  cssNode.rel = 'stylesheet'
+  cssNode.type = 'text/css'
+  cssNode.href = 'https://k1-searchbank.github.io/searchbank-extensions/dist/style.css'
+  document.head.appendChild(cssNode)
+});
+
+
 // published at
 window.addEventListener('DOMContentLoaded', (event) => {
   console.log('consoleを開いたね？？？\nSearch Bankへようこそ！');
